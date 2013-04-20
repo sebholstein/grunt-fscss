@@ -73,7 +73,15 @@ exports.fscss = {
     test.equal(cssp.processFile(), expected, "should not replace files with relative path");
     test.done();
   },
-  specialChars: function(test) {
+  spaceInFilename: function(test) {
+    test.expect(1);
+    var log_function = function() {};
+    var cssp = new CssProcessor("body{background:url(\"my image.jpg\");}", false, log_function);
+    var expected = "body{background:url(\"$CMS_REF(media:\"my_image\")$\");}";
+    test.equal(cssp.processFile(), expected, "should replace spaces with _");
+    test.done();
+  },
+  specialGerChars: function(test) {
     test.expect(1);
     var log_function = function() {};
     var cssp = new CssProcessor("body{background:url(\"üäöß.jpg\");}", false, log_function);
