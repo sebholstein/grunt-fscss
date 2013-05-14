@@ -1,0 +1,45 @@
+body {
+	background: url("$CMS_REF(media:"my__background")$") no-repeat top left;
+}
+
+@font-face {
+    font-family: 'CalligraphyFLFRegular';
+    src: url('$CMS_REF(media:"calligraphyflf")$');
+    src: local('CalligraphyFLF Regular'), local('CalligraphyFLF'), url('$CMS_REF(media:"calligraphyflf")$') format('truetype');
+}
+
+.box {
+	background: url("http://www.google.de/logo.png") no-repeat;
+}
+
+.box2 {
+	background: url('/');
+}
+
+.box3 {
+	background: url( '$CMS_REF(media:"my_picture")$' );
+}
+
+/* NEW FILE */
+
+body {
+	background: url("$CMS_REF(media:"my__background")$") no-repeat top left;
+}
+
+@font-face {
+    font-family: 'CalligraphyFLFRegular';
+    src: url('$CMS_REF(media:"calligraphyflf")$');
+    src: local('CalligraphyFLF Regular'), local('CalligraphyFLF'), url('$CMS_REF(media:"calligraphyflf")$') format('truetype');
+}
+
+.box {
+	background: url("http://www.google.de/logo.png") no-repeat;
+}
+
+.box2 {
+	background: url('/');
+}
+
+.box3 {
+	background: url( '$CMS_REF(media:"my_picture")$' );
+}

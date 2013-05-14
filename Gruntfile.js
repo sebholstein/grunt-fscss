@@ -27,8 +27,16 @@ module.exports = function(grunt) {
       test: {
         files: {
           'test/temp/style-fs.css': 'test/fixtures/style.css',
-          'test/temp/style-conc-fs.css': ['test/fixtures/style.css', 'test/fixtures/style2.css']
-        }  
+          'test/temp/style-conc-fs.css': ['test/fixtures/style.css', 'test/fixtures/style2.css'],
+        }
+      },
+      testSeperator: {
+        options: {
+          seperator: '\n\n/* NEW FILE */\n\n'
+        },
+        files: {
+          'test/temp/style-conc-sep-fs.css': ['test/fixtures/style.css', 'test/fixtures/style2.css']
+        }
       }
     },
 
@@ -53,7 +61,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "test/temp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'fscss:test', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'fscss:test', 'fscss:testSeperator', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['test']);

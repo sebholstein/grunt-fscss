@@ -13,6 +13,11 @@ module.exports = function(grunt) {
   var CssProcessor = require('../lib/cssprocessor.js');
 
   grunt.registerMultiTask('fscss', 'Replaces images references with FirstSpirit CMS_REF references', function() {
+    // merge options with defaults
+    var options = this.options({
+      seperator: '\n\n'
+    });
+
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
 
@@ -28,7 +33,7 @@ module.exports = function(grunt) {
       }).map(function(filepath) {
         // Read file source.
         return grunt.file.read(filepath);
-      }).join("\n\n");
+      }).join(options.seperator);
 
       if(src.toString().length < 1) {
         return grunt.log.warn("No (or only empty) css files found to process!");
