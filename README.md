@@ -96,6 +96,6 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-0.2.0 Added option to define a seperator for multiple concatinated CSS files
-0.1.1 Fixed uuid generation algorithm
-0.1.0 Initial release 
+* 0.2.0 Added option to define a seperator for multiple concatinated CSS files
+* 0.1.1 Fixed uuid generation algorithm
+* 0.1.0 Initial release 
