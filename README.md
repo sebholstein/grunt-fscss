@@ -19,7 +19,16 @@ grunt.loadNpmTasks('grunt-fscss');
 
 ## The "fscss" task
 
-### Overview
+### Options
+
+#### seperator
+Type: `String`
+Default: `\n\n`
+
+Concatenated files will be joined on this string.
+
+## Usage exmples
+
 In your project's Gruntfile, add a section named `fscss` to the data object passed into `grunt.initConfig()`.
 
 ```js
@@ -72,6 +81,9 @@ You can also configure multiple files that get concatenated to one output file l
 grunt.initConfig({
   fscss: {
     dist: {
+      options: {
+        seperator: '\n\n /* next file */ \n\n'
+      },
       files: {
         'path/to/output-fs.css': ['path/to/input1.css', 'path/to/input2.css'],
       }
@@ -84,4 +96,6 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-0.1.0 Initial release
+0.2.0 Added option to define a seperator for multiple concatinated CSS files
+0.1.1 Fixed uuid generation algorithm
+0.1.0 Initial release 
