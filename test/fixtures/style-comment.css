@@ -1,0 +1,21 @@
+body {
+  background: url("images/my_-background.png") no-repeat top left;
+}
+
+@font-face {
+    font-family: 'CalligraphyFLFRegular';
+    src: url('CalligraphyFLF.eot');
+    src: local('CalligraphyFLF Regular'), local('CalligraphyFLF'), url('CalligraphyFLF.ttf') format('truetype');
+}
+
+.box {
+  background: url("http://www.google.de/logo.png") no-repeat;
+}
+
+.box2 {
+  background: url('/');
+}
+
+.box3 {
+  background: url( 'path/to/my-picture.jpg' );
+}

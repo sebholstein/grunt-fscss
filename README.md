@@ -3,7 +3,7 @@
 > Replaces media references in CSS files with valid FirstSpirit $CMS_REF(media:"")$ function calls.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1`
+This plugin requires Grunt `~0.4.3`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -25,7 +25,11 @@ grunt.loadNpmTasks('grunt-fscss');
 Type: `String`
 Default: `\n\n`
 
-Concatenated files will be joined on this string.
+#### addFileNameComment
+Type: `boolean`
+Default: `false`
+
+This option will add the source filename as a css comment at the end of each line where a url() call got replaced with a $CMS_REF()$ function call. This feature is mainly for debugging purposes.
 
 ## Usage exmples
 
@@ -40,8 +44,6 @@ grunt.initConfig({
   },
 })
 ```
-
-### Usage Examples
 
 #### A Simple example
 In this example, the default options are used to replace image references to FirstSpirit $CMS_REF(media:"")$ function calls:
@@ -58,7 +60,7 @@ grunt.initConfig({
 })
 ```
 
-Some sample replacment could be:
+Some sample replacement could be:
 
 ```css
 .box {
@@ -92,10 +94,42 @@ grunt.initConfig({
 })
 ```
 
+#### File comments in compiled CSS
+When you enable the option `addFileNameComment` the processor will add comments to the end of the line with the source filenames that got replaced. Here's an example:
+
+```js
+grunt.initConfig({
+  fscss: {
+    options: {
+      addFileNameComment: true
+    }
+    dist: {
+      files: {
+        'path/to/output-fs.css': ['path/to/input.css'],
+      }
+    }
+  }
+})
+```
+
+Some sample output could be:
+
+```css
+.box {
+  background: url('images/my-Great-Picture.png') no-repeat;
+}
+```
+
+gets replaced with:
+
+```css
+.box {
+  background: url('$CMS_REF(media:"my_great_picture")$') no-repeat; /* my_great_picture = images/my-Great-Picture.png */
+}
+```
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
-## Release History
-* 0.2.0 Added option to define a seperator for multiple concatinated CSS files
-* 0.1.1 Fixed uuid generation algorithm
-* 0.1.0 Initial release 
+## Changelog
+See [CHANGELOG.md](CHANGELOG.md) 

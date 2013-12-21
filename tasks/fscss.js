@@ -15,12 +15,12 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('fscss', 'Replaces images references with FirstSpirit CMS_REF references', function() {
     // merge options with defaults
     var options = this.options({
-      seperator: '\n\n'
+      seperator: '\n\n',
+      addFileNameComment: false
     });
 
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
-
       // Concat specified files.
       var src = f.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       }
 
       // replace media references in given file
-      var cssp = new CssProcessor(src.toString(), false, function(){});
+      var cssp = new CssProcessor(grunt.util.normalizelf(src.toString()), grunt.util.linefeed, options.addFileNameComment);
       var srcp = cssp.processFile();
       
       // Write the destination file.
@@ -48,7 +48,6 @@ module.exports = function(grunt) {
 
       // Print a success message.
       grunt.log.writeln('File "' + f.dest + '" created.');
-  });
-
+    });
   });
 };
