@@ -39,6 +39,9 @@ module.exports = function(grunt) {
         }
       },
       testComment: {
+        options: {
+          addFileNameComment: true
+        },
         files: {
           'test/temp/style-comment.css': 'test/fixtures/style-comment.css',
         }
@@ -56,7 +59,7 @@ module.exports = function(grunt) {
 
     changelog: {
       options: {
-        dest: 'README.md',
+        dest: 'CHANGELOG.md',
         github: 'https://github.com/SebastianM/grunt-fscss',
         editor: 'sublime -w'
       }
