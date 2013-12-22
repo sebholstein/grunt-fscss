@@ -2,6 +2,8 @@
 
 > Replaces media references in CSS files with valid FirstSpirit $CMS_REF(media:"")$ function calls.
 
+[![NPM](https://nodei.co/npm/grunt-fscss.png?downloads=true)](https://nodei.co/npm/grunt-fscss/)
+
 ## Getting Started
 This plugin requires Grunt `~0.4.3`
 
