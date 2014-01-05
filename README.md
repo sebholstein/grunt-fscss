@@ -134,4 +134,8 @@ gets replaced with:
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Changelog
-See [CHANGELOG.md](CHANGELOG.md) 
+See [CHANGELOG.md](CHANGELOG.md)
+
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-46864714-1/sebastianm/grunt-fscss)](https://github.com/igrigorik/ga-beacon)
