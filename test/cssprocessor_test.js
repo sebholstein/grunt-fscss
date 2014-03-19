@@ -97,5 +97,12 @@ exports.fscss = {
     var expected = "body{background:url('http://www.google.de/my_file.jpg');}";
     test.equal(cssp.processFile(), expected, "should not add a filename comment if it's an url");
     test.done();
+  },
+  atCharTest: function(test) {
+    test.expect(1);
+    var cssp = new CssProcessor("body{background:url('my_file@2x.jpg');}", "\n", false);
+    var expected = "body{background:url('$CMS_REF(media:\"my_file@2x\")$');}";
+    test.equal(cssp.processFile(), expected, "should not replace @ chars");
+    test.done();
   }
 };

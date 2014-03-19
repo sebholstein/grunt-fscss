@@ -19,3 +19,7 @@ body {
 .box3 {
 	background: url( '$CMS_REF(media:"my_picture")$' );
 }
+
+.box4 {
+  background: url('$CMS_REF(media:"image@2x")$');
+}

@@ -19,3 +19,7 @@ body {
 .box3 {
 	background: url( 'path/to/my-picture.jpg' );
 }
+
+.box4 {
+  background: url('path/to/my/retina/image@2x.png');
+}
