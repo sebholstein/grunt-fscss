@@ -104,5 +104,12 @@ exports.fscss = {
     var expected = "body{background:url('$CMS_REF(media:\"my_file@2x\")$');}";
     test.equal(cssp.processFile(), expected, "should not replace @ chars");
     test.done();
+  },
+  base64png: function(test) {
+    test.expect(1);
+    var cssp = new CssProcessor("body{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAFWHRTb2Z0d2FyZQBBZG);}", "\n", false);
+    var expected = "body{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAFWHRTb2Z0d2FyZQBBZG);}";
+    test.equal(cssp.processFile(), expected, "should not replace base64 data");
+    test.done();
   }
 };
