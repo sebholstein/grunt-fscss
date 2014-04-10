@@ -1,3 +1,18 @@
+<a name="v0.3.1"></a>
+### v0.3.1 (2014-04-10)
+
+
+#### Bug Fixes
+
+* **cssprocessor:**
+  * fix base64 data url detection ([c0823f11](https://github.com/SebastianM/grunt-fscss/commit/c0823f11be7c8fe6b4566afe26c5ca9258b592bd))
+  * dont replace @ chars in uuid ([0bd14234](https://github.com/SebastianM/grunt-fscss/commit/0bd142348e00e62331d23db45abdcec4aa0e8ab7))
+
+
+#### Features
+
+* **addFileNameComment:** add option addFileNameComment ([fb8e53ff](https://github.com/SebastianM/grunt-fscss/commit/fb8e53ffc8ed23359d0087970cc1928c76ba372a))
+
 <a name="v0.3.0"></a>
 ## v0.3.0 (2013-12-21)
 
