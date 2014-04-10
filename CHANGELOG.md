@@ -9,10 +9,6 @@
   * dont replace @ chars in uuid ([0bd14234](https://github.com/SebastianM/grunt-fscss/commit/0bd142348e00e62331d23db45abdcec4aa0e8ab7))
 
 
-#### Features
-
-* **addFileNameComment:** add option addFileNameComment ([fb8e53ff](https://github.com/SebastianM/grunt-fscss/commit/fb8e53ffc8ed23359d0087970cc1928c76ba372a))
-
 <a name="v0.3.0"></a>
 ## v0.3.0 (2013-12-21)
 
