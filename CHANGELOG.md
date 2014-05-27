@@ -1,13 +1,10 @@
 <a name="v0.3.1"></a>
-### v0.3.1 (2014-04-10)
+### v0.3.1 (2014-05-27)
 
 
 #### Bug Fixes
 
-* **cssprocessor:**
-  * fix base64 data url detection ([c0823f11](https://github.com/SebastianM/grunt-fscss/commit/c0823f11be7c8fe6b4566afe26c5ca9258b592bd))
-  * dont replace @ chars in uuid ([0bd14234](https://github.com/SebastianM/grunt-fscss/commit/0bd142348e00e62331d23db45abdcec4aa0e8ab7))
-
+* **cssprocessor:** data url detection ([785c1917](https://github.com/SebastianM/grunt-fscss/commit/785c19173e28e48f75de9a43f9cc3a3286d0d0b9))
 
 <a name="v0.3.0"></a>
 ## v0.3.0 (2013-12-21)
