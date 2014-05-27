@@ -111,5 +111,19 @@ exports.fscss = {
     var expected = "body{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAFWHRTb2Z0d2FyZQBBZG);}";
     test.equal(cssp.processFile(), expected, "should not replace base64 data");
     test.done();
+  },
+  base64Whitespace: function(test) {
+    test.expect(1);
+    var style = 'body {background-image: url("data: image/svg+xml ; base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==");}';
+    var cssp = new CssProcessor(style, '\n', false);
+    test.equal(cssp.processFile(), style, 'should not rewrite data urls with whitespaces');
+    test.done();
+  },
+  base64Charset: function(test) {
+    test.expect(1);
+    var style = 'body {background-image: url("data: image/svg+xml;charset=utf-8;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==");}';
+    var cssp = new CssProcessor(style, '\n', false);
+    test.equal(cssp.processFile(), style, 'should not rewrite data urls with charset');
+    test.done();
   }
 };
