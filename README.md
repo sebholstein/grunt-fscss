@@ -1,4 +1,4 @@
-# grunt-fscss [![Build Status](https://secure.travis-ci.org/SebastianM/grunt-fscss.png?branch=master)](http://travis-ci.org/SebastianM/grunt-fscss) [![Coverage Status](https://coveralls.io/repos/SebastianM/grunt-fscss/badge.png)](https://coveralls.io/r/SebastianM/grunt-fscss)
+# grunt-fscss [![Build Status](https://secure.travis-ci.org/SebastianM/grunt-fscss.png?branch=master)](http://travis-ci.org/SebastianM/grunt-fscss)
 
 > Replaces media references in CSS files with valid FirstSpirit $CMS_REF(media:"")$ function calls.
 
