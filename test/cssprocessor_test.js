@@ -157,5 +157,56 @@ exports.fscss = {
     });
     test.equal(cssp.processFile(), style, 'should not rewrite data urls with charset');
     test.done();
+  },
+  basicFileMapping: function(test) {
+    test.expect(1);
+    var cssp = new CssProcessor("body{background:url(\"../../my/dir/is/great/image.jpg\");}", "\n", {
+      addFilenameComment: false,
+      fileMapping: {
+        '../../my/dir/is/great/image.jpg': 'abc_def'
+      }
+    });
+    var expected = "body{background:url(\"$CMS_REF(media:\"abc_def\")$\");}";
+    test.equal(cssp.processFile(), expected, "should use configured reference name");
+    test.done();
+  },
+  advancedFileMapping: function(test) {
+    test.expect(1);
+    var cssp = new CssProcessor("body{background:url(\"../../my/dir/is/great/image.jpg\");}", "\n", {
+      addFilenameComment: false,
+      fileMapping: {
+        '../../my/dir/is/great/image.jpg': {
+          referenceName: 'my_custom_ref_name'
+        }
+      }
+    });
+    var expected = "body{background:url(\"$CMS_REF(media:\"my_custom_ref_name\")$\");}";
+    test.equal(cssp.processFile(), expected, "should use configured reference name");
+    test.done();
+  },
+  globalAbs: function(test) {
+    test.expect(1);
+    var cssp = new CssProcessor("body{background:url(\"../../my/dir/is/great/image.jpg\");}", "\n", {
+      addFilenameComment: false,
+      abs: 2
+    });
+    var expected = "body{background:url(\"$CMS_REF(media:\"image\", abs:2)$\");}";
+    test.equal(cssp.processFile(), expected, "should add global abs option");
+    test.done();
+  },
+  overwriteGlobalAbs: function(test) {
+    test.expect(1);
+    var cssp = new CssProcessor("body{background:url(\"../../my/dir/is/great/image.jpg\");}", "\n", {
+      addFilenameComment: false,
+      abs: 2,
+      fileMapping: {
+        '../../my/dir/is/great/image.jpg': {
+          abs: 1
+        }
+      }
+    });
+    var expected = "body{background:url(\"$CMS_REF(media:\"image\", abs:1)$\");}";
+    test.equal(cssp.processFile(), expected, "should use abs option of fileMapping");
+    test.done();
   }
 };
