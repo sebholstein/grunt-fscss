@@ -33,6 +33,38 @@ Default: `false`
 
 This option will add the source filename as a css comment at the end of each line where a url() call got replaced with a $CMS_REF()$ function call. This feature is mainly for debugging purposes.
 
+### abs
+Type: `number`
+Default: `0`
+
+Global $CMS_REF()$ `abs configuration for all referenced files.
+
+### fileMapping
+Type: `object`
+Default: `{}`
+
+If you need to make sure that a file gets a custom reference name in generated CSS or you want to overwrite global `abs` configuration, `fileMapping`is the way to go:
+
+```js
+grunt.initConfig({
+  fscss: {
+    dist: {
+      options: {
+        fileMapping: {
+          // short syntax, just configure a custom reference name
+          '/my/image.gif': 'my_image_2',
+          // if you want to configure a custom reference name and an abs configuration:
+          '/my/super/image.png': {
+            referenceName: 'overwrite_ref_name',
+            abs: 2
+          }
+        }
+      }
+    },
+  },
+})
+````
+
 ## Usage exmples
 
 In your project's Gruntfile, add a section named `fscss` to the data object passed into `grunt.initConfig()`.

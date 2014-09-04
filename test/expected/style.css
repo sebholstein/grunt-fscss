@@ -23,3 +23,7 @@ body {
 .box4 {
   background: url('$CMS_REF(media:"image@2x")$');
 }
+
+.box5 {
+  background: url('$CMS_REF(media:"my_configured_ref_name")$');
+}

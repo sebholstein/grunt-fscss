@@ -25,6 +25,11 @@ module.exports = function(grunt) {
 
     fscss: {
       test: {
+        options: {
+          fileMapping: {
+            '/overwrite/with/options.png': 'my_configured_ref_name'
+          }
+        },
         files: {
           'test/temp/style-fs.css': 'test/fixtures/style.css',
           'test/temp/style-conc-fs.css': ['test/fixtures/style.css', 'test/fixtures/style2.css'],
@@ -32,7 +37,10 @@ module.exports = function(grunt) {
       },
       testSeperator: {
         options: {
-          seperator: '\n\n/* NEW FILE */\n\n'
+          seperator: '\n\n/* NEW FILE */\n\n',
+          fileMapping: {
+            '/overwrite/with/options.png': 'my_configured_ref_name'
+          }
         },
         files: {
           'test/temp/style-conc-sep-fs.css': ['test/fixtures/style.css', 'test/fixtures/style2.css']

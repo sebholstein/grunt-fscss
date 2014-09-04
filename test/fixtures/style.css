@@ -23,3 +23,7 @@ body {
 .box4 {
   background: url('path/to/my/retina/image@2x.png');
 }
+
+.box5 {
+  background: url('/overwrite/with/options.png');
+}
