@@ -1,3 +1,11 @@
+<a name="v0.4.0"></a>
+## v0.4.0 (2014-09-04)
+
+
+#### Features
+
+* **cssprocessor:** New `fileMapping` and `abs` option. See README.md for examples ([b40b04f8](https://github.com/SebastianM/grunt-fscss/commit/b40b04f8c8355a4249a6b07a1eb207e75afaf839))
+
 <a name="v0.3.1"></a>
 ### v0.3.1 (2014-05-27)
 
