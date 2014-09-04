@@ -16,14 +16,14 @@ module.exports = function(grunt) {
     // merge options with defaults
     var options = this.options({
       seperator: '\n\n',
-      addFileNameComment: false
+      addFileNameComment: false,
+      fileMapping: {}
     });
 
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
       // Concat specified files.
       var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
           grunt.log.error('Source file "' + filepath + '" not found.');
           return false;
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       }
 
       // replace media references in given file
-      var cssp = new CssProcessor(grunt.util.normalizelf(src.toString()), grunt.util.linefeed, options.addFileNameComment);
+      var cssp = new CssProcessor(grunt.util.normalizelf(src.toString()), grunt.util.linefeed, options);
       var srcp = cssp.processFile();
       
       // Write the destination file.
