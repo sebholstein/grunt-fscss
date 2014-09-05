@@ -194,6 +194,16 @@ exports.fscss = {
     test.equal(cssp.processFile(), expected, "should add global abs option");
     test.done();
   },
+  globalAbs0: function(test) {
+    test.expect(1);
+    var cssp = new CssProcessor("body{background:url(\"../../my/dir/is/great/image.jpg\");}", "\n", {
+      addFilenameComment: false,
+      abs: 0
+    });
+    var expected = "body{background:url(\"$CMS_REF(media:\"image\", abs:0)$\");}";
+    test.equal(cssp.processFile(), expected, "should add global abs option");
+    test.done();
+  },
   overwriteGlobalAbs: function(test) {
     test.expect(1);
     var cssp = new CssProcessor("body{background:url(\"../../my/dir/is/great/image.jpg\");}", "\n", {
@@ -206,6 +216,21 @@ exports.fscss = {
       }
     });
     var expected = "body{background:url(\"$CMS_REF(media:\"image\", abs:1)$\");}";
+    test.equal(cssp.processFile(), expected, "should use abs option of fileMapping");
+    test.done();
+  },
+  overwriteGlobalAbs0: function(test) {
+    test.expect(1);
+    var cssp = new CssProcessor("body{background:url(\"../../my/dir/is/great/image.jpg\");}", "\n", {
+      addFilenameComment: false,
+      abs: 2,
+      fileMapping: {
+        '../../my/dir/is/great/image.jpg': {
+          abs: 0
+        }
+      }
+    });
+    var expected = "body{background:url(\"$CMS_REF(media:\"image\", abs:0)$\");}";
     test.equal(cssp.processFile(), expected, "should use abs option of fileMapping");
     test.done();
   }
