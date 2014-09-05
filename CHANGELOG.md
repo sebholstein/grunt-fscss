@@ -1,3 +1,11 @@
+<a name="v0.4.1"></a>
+## v0.4.1 (2014-09-05)
+
+
+#### Bug Fixes
+
+* **cssprocessor:** allow abs 0 values ([9b7eb99f](https://github.com/SebastianM/grunt-fscss/commit/9b7eb99f368b53602441ccac6d65a5219c46c1ca))
+
 <a name="v0.4.0"></a>
 ## v0.4.0 (2014-09-04)
 
