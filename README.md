@@ -35,7 +35,7 @@ This option will add the source filename as a css comment at the end of each lin
 
 ### abs
 Type: `number`
-Default: `0`
+Default: `undefined`
 
 Global $CMS_REF()$ `abs configuration for all referenced files.
 
