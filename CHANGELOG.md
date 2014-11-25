@@ -1,3 +1,8 @@
+<a name="v0.5.0"></a>
+## v0.5.0 (2014-11-25)
+
+* **cssprocessor:** add cacheStrategy option ([1c00b94a](https://github.com/SebastianM/grunt-fscss/commit/1c00b94ad6061551f5dd558fe0e2344cebeb5681))
+
 <a name="v0.4.1"></a>
 ## v0.4.1 (2014-09-05)
 
