@@ -48,10 +48,18 @@ module.exports = function(grunt) {
       },
       testComment: {
         options: {
-          addFileNameComment: true
+          addFilenameComment: true
         },
         files: {
           'test/temp/style-comment.css': 'test/fixtures/style-comment.css',
+        }
+      },
+      testCacheStrategyRevision: {
+        options: {
+          cacheStrategy: 'revision'
+        },
+        files: {
+          'test/temp/style-cache-strategy-revision.css': 'test/fixtures/style-cache-strategy-revision.css',
         }
       },
     },
@@ -82,7 +90,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "test/temp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'fscss:test', 'fscss:testSeperator', 'fscss:testComment', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'fscss:test', 'fscss:testSeperator', 'fscss:testComment', 'fscss:testCacheStrategyRevision', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['test']);
