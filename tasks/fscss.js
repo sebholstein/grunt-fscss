@@ -42,7 +42,7 @@ module.exports = function(grunt) {
       // replace media references in given file
       var cssp = new CssProcessor(grunt.util.normalizelf(src.toString()), grunt.util.linefeed, options);
       var srcp = cssp.processFile();
-      
+
       // Write the destination file.
       grunt.file.write(f.dest, srcp);
 

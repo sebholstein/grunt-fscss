@@ -33,13 +33,19 @@ Default: `false`
 
 This option will add the source filename as a css comment at the end of each line where a url() call got replaced with a $CMS_REF()$ function call. This feature is mainly for debugging purposes.
 
-### abs
+#### abs
 Type: `number`
 Default: `undefined`
 
 Global $CMS_REF()$ `abs configuration for all referenced files.
 
-### fileMapping
+#### cacheStrategy
+Type: `string`
+Default: `undefined`
+
+Possible options: `revision`
+
+#### fileMapping
 Type: `object`
 Default: `{}`
 
@@ -159,6 +165,21 @@ gets replaced with:
 ```css
 .box {
   background: url('$CMS_REF(media:"my_great_picture")$') no-repeat; /* my_great_picture = images/my-Great-Picture.png */
+}
+```
+
+#### Cache Strategy
+When you set the option `cacheStrategy` to `revision`, grunt-fscss will add a `?rid` query parameter with the FirstSpirit release revsion id to all CMS_REF calls. When no release revision ID is defined, FirstSpirit will fallback to `#global.now.timeInMillis`:
+```css
+.box {
+  background: url('images/my-Picture.png') no-repeat;
+}
+```
+gets replaced with:
+
+```css
+.box {
+  background: url('$CMS_REF(media:"my_picture")$?rid=$CMS_VALUE(ref("my_picture").target.releaseRevision.id, default:#global.now.timeInMillis)$') no-repeat;
 }
 ```
 
