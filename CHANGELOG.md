@@ -1,3 +1,11 @@
+<a name="v0.5.1"></a>
+## v0.5.1 (2014-12-02)
+
+
+#### Bug Fixes
+
+* **cssprocessor:** fix FirstSpirit output for cacheStrategy option ([d6485b6a](https://github.com/SebastianM/grunt-fscss/commit/d6485b6a4bc83f5c64c318b38cc6ed73e156d98f))
+
 <a name="v0.5.0"></a>
 ## v0.5.0 (2014-11-25)
 
