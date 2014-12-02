@@ -179,7 +179,7 @@ gets replaced with:
 
 ```css
 .box {
-  background: url('$CMS_REF(media:"my_picture")$?rid=$CMS_VALUE(ref("my_picture").target.releaseRevision.id, default:#global.now.timeInMillis)$') no-repeat;
+  background: url('$CMS_REF(media:"my_picture")$?rid=$CMS_VALUE(ref(media:"my_picture").target.releaseRevision.id, default:#global.now.timeInMillis)$') no-repeat;
 }
 ```
 
