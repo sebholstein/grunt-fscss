@@ -1,11 +1,11 @@
 body {
-	background: url("$CMS_REF(media:"my__background")$?rid=$CMS_VALUE(ref("my__background").target.releaseRevision.id, default:#global.now.timeInMillis)$") no-repeat top left;
+	background: url("$CMS_REF(media:"my__background")$?rid=$CMS_VALUE(ref(media:"my__background").target.releaseRevision.id, default:#global.now.timeInMillis)$") no-repeat top left;
 }
 
 @font-face {
     font-family: 'CalligraphyFLFRegular';
-    src: url('$CMS_REF(media:"calligraphyflf")$?rid=$CMS_VALUE(ref("calligraphyflf").target.releaseRevision.id, default:#global.now.timeInMillis)$');
-    src: local('CalligraphyFLF Regular'), local('CalligraphyFLF'), url('$CMS_REF(media:"calligraphyflf")$?rid=$CMS_VALUE(ref("calligraphyflf").target.releaseRevision.id, default:#global.now.timeInMillis)$') format('truetype');
+    src: url('$CMS_REF(media:"calligraphyflf")$?rid=$CMS_VALUE(ref(media:"calligraphyflf").target.releaseRevision.id, default:#global.now.timeInMillis)$');
+    src: local('CalligraphyFLF Regular'), local('CalligraphyFLF'), url('$CMS_REF(media:"calligraphyflf")$?rid=$CMS_VALUE(ref(media:"calligraphyflf").target.releaseRevision.id, default:#global.now.timeInMillis)$') format('truetype');
 }
 
 .box {
@@ -17,13 +17,13 @@ body {
 }
 
 .box3 {
-	background: url( '$CMS_REF(media:"my_picture")$?rid=$CMS_VALUE(ref("my_picture").target.releaseRevision.id, default:#global.now.timeInMillis)$' );
+	background: url( '$CMS_REF(media:"my_picture")$?rid=$CMS_VALUE(ref(media:"my_picture").target.releaseRevision.id, default:#global.now.timeInMillis)$' );
 }
 
 .box4 {
-  background: url('$CMS_REF(media:"image@2x")$?rid=$CMS_VALUE(ref("image@2x").target.releaseRevision.id, default:#global.now.timeInMillis)$');
+  background: url('$CMS_REF(media:"image@2x")$?rid=$CMS_VALUE(ref(media:"image@2x").target.releaseRevision.id, default:#global.now.timeInMillis)$');
 }
 
 .box5 {
-  background: url('$CMS_REF(media:"options")$?rid=$CMS_VALUE(ref("options").target.releaseRevision.id, default:#global.now.timeInMillis)$');
+  background: url('$CMS_REF(media:"options")$?rid=$CMS_VALUE(ref(media:"options").target.releaseRevision.id, default:#global.now.timeInMillis)$');
 }
