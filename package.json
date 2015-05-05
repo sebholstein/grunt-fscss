@@ -1,7 +1,7 @@
 {
   "name": "grunt-fscss",
   "description": "Replaces media references in CSS files with valid FirstSpirit $CMS_REF(media:\"\")$ function calls.",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "homepage": "https://github.com/SebastianM/grunt-fscss",
   "author": {
     "name": "Sebastian Müller",

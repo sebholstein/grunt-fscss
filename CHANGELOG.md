@@ -1,3 +1,11 @@
+<a name="v0.5.2"></a>
+### v0.5.2 (2015-05-05)
+
+
+#### Features
+
+* **node.js:** update dependent packages ([808f3cf4](https://github.com/SebastianM/grunt-fscss/commit/808f3cf4cb97979ad0d9de2198bd7525ccc60680))
+
 <a name="v0.5.1"></a>
 ## v0.5.1 (2014-12-02)
 
