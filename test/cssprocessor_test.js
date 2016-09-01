@@ -10,7 +10,7 @@ exports.fscss = {
   },
   intializeCorrectly: function(test) {
     test.expect(1);
-    var cssp = new CssProcessor("filecontent", "\n", false);
+    var cssp = new CssProcessor("filecontent", "\n");
     test.equal(cssp.fileContent, "filecontent", "should initalize fileContent correctly");
     test.done();
   },
