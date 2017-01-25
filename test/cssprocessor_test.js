@@ -10,7 +10,9 @@ exports.fscss = {
   },
   intializeCorrectly: function(test) {
     test.expect(1);
-    var cssp = new CssProcessor("filecontent", "\n", false);
+    var cssp = new CssProcessor("filecontent", "\n", {
+      addFilenameComment: false
+    });
     test.equal(cssp.fileContent, "filecontent", "should initalize fileContent correctly");
     test.done();
   },
@@ -177,6 +179,15 @@ exports.fscss = {
       addFilenameComment: false
     });
     test.equal(cssp.processFile(), style, 'should not rewrite data urls with charset');
+    test.done();
+  },
+  xFontWoff: function(test) {
+    test.expect(1);
+    var cssp = new CssProcessor("@font-face{url(data:application/x-font-woff;base64,iVBORw0KGgoAAAANSUhEUgAAFWHRTb2Z0d2FyZQBBZG+/tj24);}", "\n", {
+      addFilenameComment: false
+    });
+    var expected = "@font-face{url(data:application/x-font-woff;base64,iVBORw0KGgoAAAANSUhEUgAAFWHRTb2Z0d2FyZQBBZG+/tj24);}";
+    test.equal(cssp.processFile(), expected, "should not replace woff data");
     test.done();
   },
   basicFileMapping: function(test) {
