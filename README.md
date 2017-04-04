@@ -1,3 +1,5 @@
+Fork of SebastianM/grunt-fscss to update dependencies. switched peerDep of grunt to grunt >=0.4.5
+
 # grunt-fscss [![Build Status](https://secure.travis-ci.org/SebastianM/grunt-fscss.png?branch=master)](http://travis-ci.org/SebastianM/grunt-fscss)
 
 > Replaces media references in CSS files with valid FirstSpirit $CMS_REF(media:"")$ function calls.
